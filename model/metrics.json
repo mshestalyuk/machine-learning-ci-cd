@@ -1,0 +1,8 @@
+{
+  "roc_auc": 0.737,
+  "pr_auc": 0.6235,
+  "brier": 0.1981,
+  "n_train": 7500,
+  "n_test": 2500,
+  "defect_rate": 0.3828
+}

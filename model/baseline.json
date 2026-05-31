@@ -1,0 +1,17 @@
+{
+  "lines_added": 67.0,
+  "lines_deleted": 23.0,
+  "total_churn": 98.0,
+  "files_changed": 4.0,
+  "num_directories": 2.0,
+  "entropy": 0.44745,
+  "num_commits": 3.0,
+  "author_experience": 100.0,
+  "author_recent_changes": 5.0,
+  "test_files_changed": 1.0,
+  "test_ratio": 0.25,
+  "is_fix": 0.0,
+  "hour_of_day": 11.0,
+  "day_of_week": 3.0,
+  "off_hours": 1.0
+}
