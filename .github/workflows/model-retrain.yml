@@ -1,16 +1,12 @@
 name: Model Retrain
 
-# Cykliczny / ręczny retrening modelu ryzyka.
-# W realnym wdrożeniu zamień generate_dataset.py na ekstrakcję historii
-# z własnego repo (git log + powiązanie z incydentami / awariami CI).
-
 on:
-  workflow_dispatch:        # ręczne uruchomienie
-  schedule:
-    - cron: "0 3 * * 1"     # co poniedziałek 03:00 UTC
+  workflow_dispatch:   
+  # schedule:
+  #   - cron: "0 3 * * 1"  
 
 permissions:
-  contents: write           # by zacommitować nowy artefakt modelu
+  contents: write
 
 jobs:
   retrain:
