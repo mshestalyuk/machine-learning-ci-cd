@@ -1,0 +1,2 @@
+# Zależności wyłącznie do uruchamiania testów (nie są potrzebne w produkcji).
+pytest>=8.0
