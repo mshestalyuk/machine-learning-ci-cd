@@ -1,0 +1,8 @@
+[tool.pytest.ini_options]
+# Repozytorium nie jest pakietem instalowalnym, więc dokładamy do sys.path:
+#  "."   -> aby działało `from project.main import ...` (testy Hello World)
+#  "src" -> aby działało `from features import ...`, `from extract_features import ...`
+#           (moduły w src/ używają importów bezwzględnych)
+pythonpath = [".", "src"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]

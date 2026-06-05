@@ -1,0 +1,38 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (pełna historia)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # testy ekstrakcji budują własne repo, ale pełna historia nie szkodzi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt -r requirements-dev.txt
+
+      - name: Configure git identity
+        # Testy extract_features tworzą tymczasowe repozytoria i commitują,
+        # więc runner musi mieć ustawioną tożsamość git.
+        run: |
+          git config --global user.name  "CI"
+          git config --global user.email "ci@example.com"
+
+      - name: Run tests
+        run: pytest
